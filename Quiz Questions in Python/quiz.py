@@ -25,3 +25,12 @@ questions = {
     "Qual é a função usada para ler a entrada do usuário?": "input",
     "Qual é a sintaxe para definir uma função em Python?": "def nome_da_funcao():"
 }
+
+for question, answer in questions.items():
+        user_answer = input(question)
+        if user_answer.lower() == answer.lower():
+            print("Resposta correta!")
+
+        else:
+            print("Resposta incorreta.")
+
