@@ -26,11 +26,20 @@ questions = {
     "Qual é a sintaxe para definir uma função em Python?": "def nome_da_funcao():"
 }
 
-for question, answer in questions.items():
+#Função para executar o Quiz
+def run_quiz(questions):
+    score = 0
+ 
+#Inicio do quiz
+    for question, answer in questions.items():
         user_answer = input(question)
         if user_answer.lower() == answer.lower():
             print("Resposta correta!")
-
+            score += 1
         else:
             print("Resposta incorreta.")
+        
+        print(f"Você acertou {score} de {len(questions)} perguntas.")
 
+# Executa o quiz
+run_quiz(questions)
