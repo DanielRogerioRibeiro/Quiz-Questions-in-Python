@@ -2,18 +2,8 @@
 # Este quiz tem como objetivo apresentar uma série de perguntas sobre Python para que o usuário responda
 
 print ("*****Seja Bem-Vindo ao Quiz Python*****")
-print ("*****Para iniciar por favor selecione o tema:")
-tema_int = input("(1) Operadores (2) Cálculo (3) Sintaxe : ")
-tema = int(tema_int)
 
-if (tema == 1):
-    print ("Ok...Vamos as Operações")
 
-elif (tema == 2):
-    print ("Ok...Vamos aos Cálculos")
-
-else:
-    print ("Ok...Vamos as Sintaxes")
 
 # Lista de perguntas e respostas
 questions = {
