@@ -11,12 +11,12 @@ cor4 ='#050505' #black
 
 # Cria uma window
 window = Tk()
-window.title("QUESTÕES SOBRE PYTHON")
-window.geometry('600x350') 
-window.iconphoto(False, PhotoImage(file="Quiz Questions in Python/imagens/Python_logo.png"))
-window.resizable(width=False,height=False)
+window.title ("QUESTÕES SOBRE PYTHON")
+window.geometry ('600x350') 
+window.iconphoto (False, PhotoImage(file="imagens/Python_logo.png"))
+window.resizable (width=False,height=False)
 
-img = PhotoImage(file="Quiz Questions in Python/imagens/Python_logo.png")
+img = PhotoImage (file="imagens/Python_logo.png")
 
 Label.logo = Label(window, image=img, anchor='center').pack()
 
@@ -64,7 +64,7 @@ def confirm_answer():
 
 # Cria um botão para o usuário confirmar sua resposta
 button_confirm = Button(window, text="Next", font=("Arial", 14),  command=confirm_answer)
-button_confirm.place (x=480, y=300)
+button_confirm.place (x=520, y=300)
 
 # Função para escolher a próxima pergunta
 def next_question():
@@ -89,5 +89,16 @@ def next_question():
 
 # Chama a função para escolher a primeira pergunta
 next_question()
+
+
+#Criando função sair
+def exit():
+    window.destroy()
+    return
+
+
+# Cria um botão sair
+button_exit = Button(window, text="Exit", font=("Arial", 14),  command=exit)
+button_exit.place (x=20, y=300)
 
 window.mainloop()
