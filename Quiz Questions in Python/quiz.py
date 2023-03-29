@@ -110,3 +110,7 @@ button_exit.place (x=20, y=300)
 
 # Mantedno a janela ativa
 window.mainloop()
+
+
+
+
