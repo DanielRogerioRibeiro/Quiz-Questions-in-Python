@@ -38,13 +38,17 @@ questions_answer = {
     "Qual é o operador para concatenar duas strings em Python? ": "+",
     "Como se chama o método que adiciona um elemento\nao final de uma lista em Python?": "append",
     "Qual é o resultado da expressão 2 + 2 * 3? ": "8",
-    "Qual é o nome da função para imprimir algo na\ntela em Python? ": "print" or "Print" or "PRINT",
+    "Qual é o nome da função para imprimir algo na\ntela em Python? ": "print",
     "Qual é a função usada para ler a entrada do usuário?": "input",
-    "Qual é a sintaxe para definir uma função em Python?": "def nome_da_funcao():"
+    "Qual é a função utilizada para ler um arquivo em Python?": "open",
+    "Como se chama a estrutura de controle que repete um bloco\nde código enquanto uma condição é verdadeira em Python?": "while",
+    "Qual é o operador utilizado para comparar se dois\nvalores são iguais em Python?": "==",
+    "Qual é a sintaxe para definir uma função em Python?": "def"
 }
 
 # Lista com as perguntas do Quiz
 questions = list(questions_answer.keys())
+
 
 # Função para verificar a resposta do usuário
 def confirm_answer():
@@ -52,15 +56,16 @@ def confirm_answer():
     answer_correct = questions_answer[title2_question["text"]]
     
     if answer_usuario == answer_correct:
-        label_answer = Label(window, text="Resposta correta!", font=("Arial", 14), fg="green")
-        
+        label_answer = Label(window, width=30, height=2, text="Resposta correta!", font=("Arial", 14), fg="green")
+
     else:
-        label_answer = Label(window, width=30, height=1, text="A Resposta Correta era: {}" .format(answer_correct), font=("Arial", 14), fg="red", bg=None)
+        label_answer = Label(window, width=30, height=2, text="Resposta Incorreta!\nA Resposta correta é: {}".format(answer_correct), font=("Arial", 14), fg="red")
         
+    label_answer.place (x=120, y=250)
     
-    label_answer.place (x=150, y=250)
     next_question()
-    
+
+ 
 
 # Cria um botão para o usuário confirmar sua resposta
 button_confirm = Button(window, text="Next", font=("Arial", 14),  command=confirm_answer)
@@ -81,11 +86,13 @@ def next_question():
     input_answer.delete(0, END)
 
     
+            
     # Se todas as perguntas já foram respondidas, exibe mensagem final
     if not questions:
         title2_question["text"] = "Fim do Quiz!"
-        #input_answer.pack_forget()
-        #button_confirm.pack_forget()
+        input_answer.place_forget()
+        button_confirm.place_forget()
+        
 
 # Chama a função para escolher a primeira pergunta
 next_question()
@@ -101,4 +108,5 @@ def exit():
 button_exit = Button(window, text="Exit", font=("Arial", 14),  command=exit)
 button_exit.place (x=20, y=300)
 
+# Mantedno a janela ativa
 window.mainloop()
